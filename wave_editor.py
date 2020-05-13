@@ -28,8 +28,8 @@ def get_menu_input(input_option, wrong_input_msg):
 
 
 # edit functions
-def reverse_wav(file_name):
-    pass
+def reverse_wav(wave_file):
+    return wave_file[1]
 
 
 def audio_off(file_name):
@@ -69,22 +69,22 @@ def load_wave_file():
 
 def call_edit_function(user_input, wave_file):
     if user_input == 1:
-        return reverse_wav()
+         reverse_wav(wave_file)
     elif user_input == 2:
-        return audio_off()
+         audio_off()
     elif user_input == 3:
-        return increase__wav_volume()
+         increase__wav_volume()
     elif user_input == 4:
-        return increase_wav_speed()
+         increase_wav_speed()
     elif user_input == 5:
-        return decrease__wav_volume()
+         decrease__wav_volume()
     elif user_input == 6:
-        return decrease_wav_speed()
+         decrease_wav_speed()
     elif user_input == 7:
-        return low_path_filter()
+         low_path_filter()
     elif user_input == 8:
         return "8"
-                       
+
 
 def end_menu(file_name):
     pass
@@ -92,13 +92,14 @@ def end_menu(file_name):
 
 def changing_wav_menu():
     wave_file, file_name = load_wave_file()
+    wave_file = list(wave_file)
     in_edit_mode = True
     while in_edit_mode:
         display(CHANGING_WAVE_MENU_MSG)
         user_input = get_menu_input({1, 2, 3, 4, 5, 6, 7, 8}
                                     , MENU_INPUT_INCORRECT)
-        wave_file = call_edit_function(user_input, wave_file)
-        if wave_file is "8":  # exit this menu
+
+        if call_edit_function(user_input, wave_file) is "8":
             in_edit_mode = False
         else:  # save wave file and another iteration
             save_wave(wave_file[0], wave_file[1], file_name)
