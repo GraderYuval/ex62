@@ -87,7 +87,7 @@ def call_edit_function(user_input, wave_file):
 
 
 def end_menu(file_name):
-    
+    pass
 
 
 def changing_wav_menu():
@@ -125,3 +125,5 @@ def main_function():
 
 
 main_function()
+
+print('bkabkabkabkabkab')
