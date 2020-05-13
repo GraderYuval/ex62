@@ -69,19 +69,19 @@ def load_wave_file():
 
 def call_edit_function(user_input, wave_file):
     if user_input == 1:
-         reverse_wav(wave_file)
+        reverse_wav(wave_file)
     elif user_input == 2:
-         audio_off()
+        audio_off()
     elif user_input == 3:
-         increase__wav_volume()
+        increase__wav_volume()
     elif user_input == 4:
-         increase_wav_speed()
+        increase_wav_speed()
     elif user_input == 5:
-         decrease__wav_volume()
+        decrease__wav_volume()
     elif user_input == 6:
-         decrease_wav_speed()
+        decrease_wav_speed()
     elif user_input == 7:
-         low_path_filter()
+        low_path_filter()
     elif user_input == 8:
         return "8"
 
